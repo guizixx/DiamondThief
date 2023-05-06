@@ -1,0 +1,105 @@
+<!--Grupo: 14, Número: 60262, Nome: André Guo, PL: 22-->
+<!--Grupo: 14, Número: 60260, Nome: Guilherme Pinto, PL: 22-->
+<!--Grupo: 14, Número: 60284, Nome: Kaisheng Li, PL: 22-->
+
+<!DOCTYPE html>
+
+<html lang="pt-PT">
+<head>
+    <meta name="viewport" content="device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/DiamondThiefLogo.jpg">
+    <title>Diamond Thief | Game</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="img/bejeweled-ost.mp3" type="audio/mpeg">
+    </audio>
+    <section class="hero">
+        <div class="main-width">
+            <header>
+                <div class="logo">
+                    <h2><a href="#">Game</a></h2>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="frontPage.html">Home</a></li>
+                        <li><a href="Leaderboard.html">Leaderboard</a></li>
+                        <li><a href="Instruções.html">Instruções</a></li>
+                        <li><a href="More.html">More</a></li>
+                        <li><a href="FichaTécnica.html">Ficha Tecnica</a></li>
+                        <li><button class="btnLogin-popup">Login</button></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="gameInfo">
+                <h1>Score: <span id="score">0</span></h1>
+                <h1>Time: <span id="time"></span></h1>
+            </div>
+            <div id="board"></div>
+        </div>
+        <div class="wrapper">
+            <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required >
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required >
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btnLogin">Login</button>
+                    <div class="login-register">
+                        <p>Don't jave an account? <a href="#" class="register-link">Register</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <h2>Registration</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" required >
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required >
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required >
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">I agree to the terms & conditions</label>
+                    </div>
+                    <button type="submit" class="btnLogin">Register</button>
+                    <div class="login-register">
+                        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="jewel.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
