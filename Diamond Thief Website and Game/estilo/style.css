@@ -317,7 +317,7 @@ body{
     border-bottom: 3px solid #d56a12;
 }
 
-.main-width > .gameInfo {
+.main-width > .gameDetails {
     position: relative;
     display: inline-block;
     color: #fff;
@@ -325,6 +325,31 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+
+.gameDetails h1 span {
+    margin-left: 8px;
+}
+
+.gameDetails h1 b {
+    font-weight: 700;
+}
+
+.gameDetails button {
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px 11px;
+    background: transparent;
+    border: 2px solid #fff;
+    transition: 0.3s ease;
+}
+
+.gameDetails button:hover {
+    color: #d56e12;
+    background: #fff;
+}
+
 
 #board {
     width: 450px;
@@ -340,6 +365,7 @@ body{
 #board img {
     width: 55px;
     height: 55px;
+    filter: drop-shadow(2px 3px 6px #555);
 }
 
 .content-table td {

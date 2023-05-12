@@ -1,5 +1,37 @@
 "use strict"
 
+/** Constantes do temporizador */
+
+// Guarda o valor da duração máxima de um jogo.
+const MAX_DURATION = 50;
+
+// Guarda o valor da duração mínima de um jogo.
+const MIN_DURATION = 15;
+
+/* ------------------------------------------------------------------------- */
+
+/** Identificador do timer do jogo. */
+const SPAN_TIMER = "timer";
+
+/* ------------------------------------------------------------------------- */
+
+/** Botão para acabar jogo. */
+const BOTAO_ACABA_JOGO = "btnStopGame";
+
+/** Botão para começar jogo. */
+const BOTAO_COMECA_JOGO = "btnComecarJogo"
+
+/* ------------------------------------------------------------------------- */
+
+/** Timer do jogo. */
+let start = null;
+
+let gameTimer = null;
+
+let maxDurTimer = null;
+
+
+/* ------------------------------------------------------------------------- */
 
 var jewels = ["Blue", "Orange", "Green", "Yellow", "Red", "Purple"];
 
@@ -14,6 +46,7 @@ var otherTile; //the jewel that we are trying to swap with.
 
 window.onload = function() {
     startGame();
+    manageEventListeners();
 
     // 1/10th of a second
     window.setInterval(function(){
@@ -23,9 +56,29 @@ window.onload = function() {
     }, 100);
 }
 
-
 function randomJewel() {
     return jewels[Math.floor(Math.random() * jewels.length)]; //0 - 5.99 
+}
+
+function manageEventListeners() {
+    document.getElementById(BOTAO_ACABA_JOGO).
+        addEventListener('click', stopGame);
+    
+    document.getElementById(BOTAO_COMECA_JOGO).
+        addEventListener('click', iniciar);
+}
+
+function iniciar() {
+    score = 0;
+
+    start = Math.floor(Date.now() / 1000);
+    showTimeLeft();
+
+
+    gameTimer = setInterval(showTimeLeft, 1000);
+    maxDurTimer = setTimeout(stopGame, MAX_DURATION * 1000);
+
+    document.getElementById(BOTAO_ACABA_JOGO).disabled = false;
 }
 
 function startGame() {
@@ -42,8 +95,8 @@ function startGame() {
             tile.addEventListener("dragstart", dragStart); //click on a jewel, inicia processo de drag
             tile.addEventListener("dragover", dragOver); //clicking on jewel, moving mouse to drag the jewel
             tile.addEventListener("dragenter", dragEnter); //draggin jewel onto another jewel
-            tile.addEventListener("dragleave", dragLeave); //leave jewel over another jewel
-            tile.addEventListener("drop", dragDrop); //dropping a jewel over another jewel
+            tile.addEventListener("dragleave", dragLeave); //deixar uma joia em cima de outra joia
+            tile.addEventListener("drop", dragDrop); //deixar "cair" uma joia em cima da outra joia
             tile.addEventListener("dragend", dragEnd); //after drag process completed, swap jewels
             
 
@@ -340,4 +393,17 @@ function generateJewel() {
             board[0][c].src = "./images/" + randomJewel() + ".png";
         }
     }
+}
+
+function showTimeLeft() {
+    let timeLeft = MAX_DURATION - (Math.floor(Date.now() / 1000) - start);
+    document.getElementById(SPAN_TIMER).innerHTML = timeLeft;
+}
+
+function stopGame() {
+    clearInterval(gameTimer);
+
+    clearTimeout(maxDurTimer);
+
+    document.getElementById(BOTAO_ACABA_JOGO).disabled = true;
 }
