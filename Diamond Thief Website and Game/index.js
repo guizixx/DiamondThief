@@ -89,7 +89,6 @@ function trataFazerRegistro() {
         registro = new User(obtemDadosUser());
         
         gravaUsuarioNoHistorico(registro);
-        createClassfTable();
 
 
         formulario.reset();
@@ -172,15 +171,15 @@ function funcaoEventListeners() {
  */
 function Login() {
     const localEmail = localStorage.getItem(EMAIL_INPUT);
-    let mail = document.getElementById(EMAIL_LOGIN).value
+    let mail = document.getElementById(EMAIL_LOGIN).value;
 
-    const localPassword = localStorage.getItem(PASSWORD_INPUT)
-    let pass = document.getElementById(PASSWORD_LOGIN).value
+    const localPassword = localStorage.getItem(PASSWORD_INPUT);
+    let pass = document.getElementById(PASSWORD_LOGIN).value;
 
     if (mail === localEmail && pass === localPassword) {
-        alert('Login com sucesso.')
+        alert('Login com sucesso.');
     } else {
-        alert('As credenciais introduzidas não estão corretas.')
+        alert('As credenciais introduzidas não estão corretas.');
     }
 }
 
