@@ -106,7 +106,15 @@ function startGame() {
         board.push(row);
     }
     console.log(board);
+
+
 }
+
+// Obtém a referência para o contador de tempo e define o tempo inicial em segundos
+var contadorElemento = document.getElementById("contador");
+var tempoRestante = 60;
+
+
 
 function dragStart() {
     //this refers to tile that was clicked on for dragging
@@ -406,4 +414,23 @@ function stopGame() {
     clearTimeout(maxDurTimer);
 
     document.getElementById(BOTAO_ACABA_JOGO).disabled = true;
+  
 }
+
+var botao = document.getElementById('btnStopGame');
+var botao1 = document.getElementById('btnComecarJogo');
+var elemento = document.getElementById('fimDoJogo');
+
+botao.addEventListener('click', function() {
+  elemento.style.display = 'block';
+});
+
+botao1.addEventListener('click', function() {
+  elemento.style.display = 'none';
+});
+
+            
+
+
+
+

@@ -360,7 +360,10 @@ body{
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+
+    position: relative;
 }
+
 
 #board img {
     width: 55px;
@@ -576,4 +579,33 @@ body{
     text-decoration: underline;
 }
 
+.FimDoJogo{
+    display: none;
+    position: absolute;
+    border: 1px solid #000;
+    height: 200px;
+    width: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+
+
+    background-color: rgb(182, 255, 127);
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    z-index: 1;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    from {
+      top: 0px;
+    }
+    to {
+      top: 50%;
+    }
+  }
 
