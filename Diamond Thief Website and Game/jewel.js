@@ -37,7 +37,7 @@ let maxDurTimer = null;
 
 /* ------------------------------------------------------------------------- */
 
-var jewels = ["Blue", "Orange", "Green", "Yellow", "Red", "Purple"];
+var jewels = ["Blue", "Orange", "Green", "Yellow", "Red", "Purple", "White"];
 
 var board = [];
 var rows = 8;
@@ -61,7 +61,7 @@ window.onload = function() {
 }
 
 function randomJewel() {
-    return jewels[Math.floor(Math.random() * jewels.length)]; //0 - 5.99 
+    return jewels[Math.floor(Math.random() * jewels.length)];
 }
 
 function manageEventListeners() {
