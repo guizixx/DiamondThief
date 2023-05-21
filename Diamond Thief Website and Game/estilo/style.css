@@ -605,15 +605,6 @@ body{
     transform: translate(-50%, -90%);
     color: #fff;
     font-weight: 500;
-
-#msgSuccess {
-    text-align: center;
-    color: #00bb00;
-    background-color: #bbffbe;
-    padding: 10px;
-    border-radius: 4px;
-    display: none;
-}
     background-color: #162938;
 
     justify-content: center;
@@ -633,3 +624,11 @@ body{
     }
   }
 
+#msgSuccess {
+    text-align: center;
+    color: #00bb00;
+    background-color: #bbffbe;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
