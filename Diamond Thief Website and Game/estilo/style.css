@@ -582,15 +582,18 @@ body{
 .FimDoJogo{
     display: none;
     position: absolute;
-    border: 1px solid #000;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .5);
     height: 200px;
     width: 550px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -90%);
+    color: #fff;
+    font-weight: 500;
 
-
-    background-color: rgb(182, 255, 127);
+    background-color: #162938;
 
     justify-content: center;
     align-items: center;
