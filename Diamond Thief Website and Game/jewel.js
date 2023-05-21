@@ -1,3 +1,7 @@
+/*Grupo: 14, Número: 60262, Nome: André Guo, PL: 22*/
+/*Grupo: 14, Número: 60260, Nome: Guilherme Pinto, PL: 22*/
+/*Grupo: 14, Número: 60284, Nome: Kaisheng Li, PL: 22*/
+
 "use strict"
 
 /** Constantes do temporizador */
@@ -33,7 +37,7 @@ let maxDurTimer = null;
 
 /* ------------------------------------------------------------------------- */
 
-var jewels = ["Blue", "Orange", "Green", "Yellow", "Red", "Purple"];
+var jewels = ["Blue", "Orange", "Green", "Yellow", "Red", "Purple", "White"];
 
 var board = [];
 var rows = 8;
@@ -57,7 +61,7 @@ window.onload = function() {
 }
 
 function randomJewel() {
-    return jewels[Math.floor(Math.random() * jewels.length)]; //0 - 5.99 
+    return jewels[Math.floor(Math.random() * jewels.length)];
 }
 
 function manageEventListeners() {
@@ -106,7 +110,15 @@ function startGame() {
         board.push(row);
     }
     console.log(board);
+
+
 }
+
+// Obtém a referência para o contador de tempo e define o tempo inicial em segundos
+var contadorElemento = document.getElementById("contador");
+var tempoRestante = 60;
+
+
 
 function dragStart() {
     //this refers to tile that was clicked on for dragging
@@ -406,4 +418,23 @@ function stopGame() {
     clearTimeout(maxDurTimer);
 
     document.getElementById(BOTAO_ACABA_JOGO).disabled = true;
+  
 }
+
+var botao = document.getElementById('btnStopGame');
+var botao1 = document.getElementById('btnComecarJogo');
+var elemento = document.getElementById('fimDoJogo');
+
+botao.addEventListener('click', function() {
+  elemento.style.display = 'block';
+});
+
+botao1.addEventListener('click', function() {
+  elemento.style.display = 'none';
+});
+
+            
+
+
+
+

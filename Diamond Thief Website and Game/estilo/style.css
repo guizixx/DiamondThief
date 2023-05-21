@@ -360,7 +360,10 @@ body{
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+
+    position: relative;
 }
+
 
 #board img {
     width: 55px;
@@ -589,6 +592,19 @@ body{
 	border: 1px solid #EF9A9A;
 	display: none;
 }
+.FimDoJogo{
+    display: none;
+    position: absolute;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .5);
+    height: 200px;
+    width: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    color: #fff;
+    font-weight: 500;
 
 #msgSuccess {
     text-align: center;
@@ -598,3 +614,22 @@ body{
     border-radius: 4px;
     display: none;
 }
+    background-color: #162938;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    z-index: 1;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    from {
+      top: 0px;
+    }
+    to {
+      top: 50%;
+    }
+  }
+
