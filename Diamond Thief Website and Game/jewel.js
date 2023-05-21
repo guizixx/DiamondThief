@@ -1,3 +1,7 @@
+/*Grupo: 14, Número: 60262, Nome: André Guo, PL: 22*/
+/*Grupo: 14, Número: 60260, Nome: Guilherme Pinto, PL: 22*/
+/*Grupo: 14, Número: 60284, Nome: Kaisheng Li, PL: 22*/
+
 "use strict"
 
 /** Constantes do temporizador */
