@@ -12,9 +12,9 @@ const USERNAME = "username"
 
 const ITEM_USERS = "usuarios"
 
-const EMAIL_LOGIN = "emailLogin"
+const EMAIL_LOGIN = "#emailLogin"
 
-const PASSWORD_LOGIN = "passwordLogin"
+const PASSWORD_LOGIN = "#passwordLogin"
 
 const BOTAO_FAZER_LOGIN = "btnLogin"
 
@@ -35,6 +35,23 @@ let formulario = null
 
 
 let usuarios = []
+
+
+/*----------------------------*/
+var emailL = document.forms['loginForm']['emailLogin'];
+var passwordL = document.forms['loginForm']['passwordLogin'];
+
+var email_error = document.getElementById('email_error');
+var pass_error = document.getElementById('pass_error');
+
+/*----------------------------*/
+let msgSuccess = document.querySelector('#msgSuccess')
+
+let username = document.querySelector('#username')
+let emailR = document.querySelector('#mailInput')
+let PasswordR = document.querySelector('#passInput')
+/*----------------------------*/
+
 
 
 /**
@@ -73,6 +90,7 @@ function principal () {
     /*createClassfTable();*/
 
     funcaoEventListeners();
+
 }
 
 
@@ -137,10 +155,29 @@ function gravaUsuarioNoHistorico(user) {
     gravaHistoricoUsuarios();
 }
 
+/* ----------------------- */
+
+function register2(){
+      let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+      
+      listaUser.push(
+      {
+        username: username.value,
+        email: emailR.value,
+        password: PasswordR.value
+      }
+      )
+      
+      localStorage.setItem('listaUser', JSON.stringify(listaUser))
+      msgSuccess.setAttribute('style','display: block');
+      msgSuccess.innerHTML = '<strong>Registed</strong>';
+}
+
+/* ----------------------- */
 
 function funcaoEventListeners() {
-    document.getElementById(BOTAO_FAZER_REGISTRO).
-        addEventListener('click', trataFazerRegistro);
+    /*document.getElementById(BOTAO_FAZER_REGISTRO).
+        addEventListener('click', trataFazerRegistro); */
 
     registerLink.addEventListener('click', ()=> {
     wrapper.classList.add('active');
@@ -161,27 +198,73 @@ function funcaoEventListeners() {
         content.classList.remove('active');
     })
 
-    document.getElementById(BOTAO_FAZER_LOGIN).
-        addEventListener('click', Login);
 
 }
 
 /**
  * Faz o login.
  */
-function Login() {
-    const localEmail = localStorage.getItem(EMAIL_INPUT);
-    let mail = document.getElementById(EMAIL_LOGIN).value;
 
-    const localPassword = localStorage.getItem(PASSWORD_INPUT);
-    let pass = document.getElementById(PASSWORD_LOGIN).value;
+function Login(){
+    let emailLogin = document.querySelector(EMAIL_LOGIN);
 
-    if (mail === localEmail && pass === localPassword) {
-        alert('Login com sucesso.');
-    } else {
-        alert('As credenciais introduzidas não estão corretas.');
+    let passwordLogin = document.querySelector(PASSWORD_LOGIN);
+    let listaUser = []
+
+    let userValid = {
+        name: '',
+        email: '',
+        password: ''
     }
+
+    listaUser = JSON.parse(localStorage.getItem('listaUser'))
+
+    listaUser.forEach((item) => {
+        if(emailLogin.value == item.email && passwordLogin.value == item.password){
+           
+            userValid = {
+                name: item.username,
+                email: item.email,
+                password: item.password
+            }
+        }
+    })
+
+    if(emailLogin.value == userValid.email && passwordLogin.value == userValid.password){
+        alert("Login feito!!!")
+    } else {
+        email_error.style.display = "block";
+		emailL.focus();
+		return false;
+    }
+
+
+
+
 }
+
+/**
+function Login(){
+
+    // Obter os valores armazenados no Local Storage
+    const storedEmail = localStorage.getItem(ITEM_USERS);
+    const storedPassword = localStorage.getItem(PASSWORD_INPUT);
+
+	if (emailL.value !== storedEmail) {
+		email_error.style.display = "block";
+		emailL.focus();
+		return false;
+	}
+	if (passwordL.value !== storedPassword) {
+		pass_error.style.display = "block";
+		passwordL.focus();
+		return false;
+	}
+    
+}
+*/
+
+
 
 /**
  * Tabela de classificações.
