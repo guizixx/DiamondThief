@@ -7,4 +7,12 @@ Funcionalidades implementadas:
 
 Funcionalidades não implementadas:
 
---funcionalidades essenciais: 3
+--funcionalidades essenciais: não está implementada a funcionalidade de estatíca quando um jogador efetua o login.
+                              não está implementada a visualização da quantidade de joias que têm de ser eliminadas
+                              durante um jogo.
+
+--funcionalidades adicionais: em termos de funcionalidades adicionais não está implementada mais nenhuma sem ser a
+                              verificação de alinhamentos verticais de joias, portanto, não temos mais opções de 
+                              modos de jogo, de estilo de jogo, de tamanho de tabuleiro nem joias de estilo
+                              diferentes. Também não está implementado um segundo dispositivo de entrada, neste
+                              caso o teclado.

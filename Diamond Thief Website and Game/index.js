@@ -247,46 +247,4 @@ function Login(){
 
 }
 
-/**
-function Login(){
 
-    // Obter os valores armazenados no Local Storage
-    const storedEmail = localStorage.getItem(ITEM_USERS);
-    const storedPassword = localStorage.getItem(PASSWORD_INPUT);
-
-	if (emailL.value !== storedEmail) {
-		email_error.style.display = "block";
-		emailL.focus();
-		return false;
-	}
-	if (passwordL.value !== storedPassword) {
-		pass_error.style.display = "block";
-		passwordL.focus();
-		return false;
-	}
-    
-}
-*/
-
-
-
-/**
- * Tabela de classificações.
- */
-/*function createClassfTable () {
-    
-    let tabela = document.querySelector('.content-table');
-
-
-    let numeroUsuario = 1;
-    for (let user of usuarios) {
-        let linhaTabela = document.createElement('tr');
-        linhaTabela.innerHTML = '<td>' + numeroUsuario + '</td>' +
-                                '<td>' + user.username +'</td>' +
-                                '<td>' + '</td>';
-        tabela.appendChild(linhaTabela);
-        numeroUsuario++;
-
-    }
-}
-*/
